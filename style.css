@@ -164,6 +164,7 @@ textarea {
   background: #35bcbcb5;
   color: yellow;
   transition: 0.3s;
+  outline: none;
 }
 input:focus,
 textarea:focus {
