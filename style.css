@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap");
+
+@font-face {
+  font-family: "Cyberpunk";
+  src: url(./assets/fonts/Cyberpunk/Cyberpunk.ttf);
+}
+
+body {
+  font-family: "Cyberpunk", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 255, 0);
+  background: url(https://i.pinimg.com/originals/5a/aa/db/5aaadbf8a5e1a6fa8f5f7462c01c033a.jpg)
+    fixed top center/cover;
+  min-height: 100vh;
+  min-width: 735px;
+}
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  /*     font-size: 2.5rem; */
+  font-size: 5vw;
+  text-shadow: 3px 4px 6px #35bcbc;
+  position: relative;
+}
+h1::after {
+  content: "";
+  position: absolute;
+  background: yellow;
+  height: 3px;
+  width: 100%;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  animation: h1anim 6s infinite linear;
+  transform-origin: centre;
+}
+@keyframes h1anim {
+  50% {
+    transform: translateX(-50%) scaleX(1);
+    background: #35bcbc;
+  }
+  100% {
+    transform: translateX(-50%) scaleX(0);
+    background: yellow;
+  }
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  border: 2px solid yellow;
+  border-radius: 20px;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  cursor: pointer;
+  backdrop-filter: blur(15px);
+  transition: all 0.5s ease-in-out;
+}
+.btn:hover {
+  background: #ff0;
+  color: #35bcbc;
+  animation: button 0.5s infinite linear;
+  box-shadow: 0 0 10px yellow;
+}
+@keyframes button {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+main {
+  min-height: 500px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.397);
+  margin: 0 auto;
+  border: 2px solid yellow;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 4px #35bcbc;
+  padding: 15px;
+}
+h2 {
+  margin: 0;
+  text-align: center;
+}
+.flexbox,
+.grid,
+.absolute {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+}
+
+.flexbox ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 190px;
+  margin: 10px;
+  background: #35bcbcb5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px 0;
+  box-shadow: none;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.flexbox li:hover {
+  box-shadow: inset 0px 0px 20px 4px rgb(255, 255, 0);
+}
+
+/* GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.grid img {
+  width: 70%;
+  margin: auto;
+}
+form {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 30% 30% 40%;
+  grid-template-rows: 25px 80px 25px;
+  gap: 5px;
+}
+#surname {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  text-transform: uppercase;
+}
+#message {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  resize: none;
+}
+#btn-submit {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+input,
+textarea {
+  border: none;
+  font-size: 1.1rem;
+  font-family: "cyberpunk", sans-serif;
+  border-radius: 5px;
+  background: #35bcbcb5;
+  color: yellow;
+}
+
+/* ABSOLUTE */
+/* Il faut mettre une position relative au parent 
+pour contraindre l'élément en absolute dans ses frontières */
+.absolute {
+  position: relative;
+}
+#circle1 {
+  height: 80px;
+  width: 80px;
+  background: #35bcbc;
+  border-radius: 150px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+#circle2 {
+  height: 40px;
+  width: 40px;
+  background: #35bcbc;
+  border-radius: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ANIMATIONS */
+.frame {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+.lines {
+  background: linear-gradient(to bottom, #ff0 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #ff0 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #ff0 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #ff0 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0px 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-size 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.angles {
+  background: linear-gradient(to right, #ff0 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #ff0 2px, transparent 2px) 0 0,
+    linear-gradient(to left, #ff0 2px, transparent 2px) 100% 0,
+    linear-gradient(to bottom, #ff0 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #ff0 2px, transparent 2px) 100% 100%,
+    linear-gradient(to top, #ff0 2px, transparent 2px) 100% 100%,
+    linear-gradient(to right, #ff0 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #ff0 2px, transparent 2px) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 7px 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.48;
+  transition: background-size 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.frame:hover .lines {
+  background-size: 100% 100%;
+}
+.frame:hover .angles {
+  background-size: 14px 14px;
+}
+article {
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+}
+article:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.301);
+  opacity: 0.46;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  bottom: 13px;
+  left: 13px;
+  transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+article:hover:before {
+  top: 21px;
+  right: 21px;
+  bottom: 21px;
+  left: 21px;
+}
