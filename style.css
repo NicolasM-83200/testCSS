@@ -4,7 +4,11 @@
   font-family: "Cyberpunk";
   src: url(./assets/fonts/Cyberpunk/Cyberpunk.ttf);
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Cyberpunk", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(255, 255, 0);
