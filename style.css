@@ -222,6 +222,22 @@ pour contraindre l'élément en absolute dans ses frontières */
   justify-items: center;
   justify-content: center;
 }
+.list-characters {
+  opacity: 0;
+  transition: 2s;
+}
+.V:hover {
+  opacity: 1;
+  transform: translateX(100%);
+}
+.johnny:hover {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+.judy:hover {
+  opacity: 1;
+  transform: translateY(-100%);
+}
 .list-characters img {
   width: 100%;
 }
