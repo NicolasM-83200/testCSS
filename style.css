@@ -19,7 +19,6 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-  /*     font-size: 2.5rem; */
   font-size: 5vw;
   text-shadow: 3px 4px 6px #35bcbc;
   position: relative;
@@ -295,5 +294,8 @@ article:hover:before {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .form {
+    width: 100%;
   }
 }
