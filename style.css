@@ -104,7 +104,8 @@ h2 {
 }
 .flexbox,
 .grid,
-.absolute {
+.absolute,
+.main-characters {
   border: 2px solid yellow;
   border-radius: 10px;
   padding: 10px;
@@ -209,6 +210,44 @@ pour contraindre l'élément en absolute dans ses frontières */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* =============== CHARACTERS ================= */
+
+.characters {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+.list-characters {
+  opacity: 0;
+  transition: 2s;
+}
+.V:hover {
+  opacity: 1;
+  transform: translateX(100%);
+}
+.johnny:hover {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+.judy:hover {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+.list-characters img {
+  width: 100%;
+}
+.johnny {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+.judy {
+  grid-row: 2/3;
+  grid-column: 2/3;
 }
 
 /* ============= ANIMATIONS ============== */
