@@ -15,15 +15,15 @@ body {
   background: url(https://i.pinimg.com/originals/5a/aa/db/5aaadbf8a5e1a6fa8f5f7462c01c033a.jpg)
     fixed top center/cover;
   min-height: 100vh;
-  max-width: 70%;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: 0 auto 20px;
   user-select: none;
 }
 h1 {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-  font-size: 5vw;
+  font-size: 4vw;
   text-shadow: 3px 4px 6px #35bcbc;
   position: relative;
 }
@@ -52,8 +52,9 @@ h1::after {
 header {
   display: flex;
   flex-direction: column;
+  gap: 30px;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .navbar {
   padding: 0;
@@ -288,9 +289,9 @@ article:hover:before {
 
 /* =========== Media queries ============= */
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 870px) {
   body {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
