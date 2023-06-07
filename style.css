@@ -11,6 +11,9 @@ body {
   background: url(https://i.pinimg.com/originals/5a/aa/db/5aaadbf8a5e1a6fa8f5f7462c01c033a.jpg)
     fixed top center/cover;
   min-height: 100vh;
+  max-width: 70%;
+  margin: 0 auto;
+  user-select: none;
 }
 h1 {
   text-transform: uppercase;
@@ -127,7 +130,8 @@ h2 {
   box-shadow: inset 0px 0px 20px 4px rgb(255, 255, 0);
 }
 
-/* GRID */
+/* =================== GRID ===================== */
+
 .grid-container {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -136,10 +140,13 @@ h2 {
   width: 70%;
   margin: auto;
 }
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
 form {
   display: grid;
   grid-template-columns: 30% 30% 40%;
-  grid-template-rows: 25px 80px 25px;
   gap: 3px;
 }
 #surname {
@@ -151,6 +158,7 @@ form {
   grid-column-start: 1;
   grid-column-end: 4;
   resize: none;
+  height: 100px;
 }
 #btn-submit {
   grid-column-start: 2;
@@ -172,9 +180,10 @@ textarea:focus {
   backdrop-filter: blur(15px);
 }
 
-/* ABSOLUTE */
+/* ============== ABSOLUTE ================= */
 /* Il faut mettre une position relative au parent 
 pour contraindre l'élément en absolute dans ses frontières */
+
 .absolute {
   position: relative;
 }
@@ -197,7 +206,9 @@ pour contraindre l'élément en absolute dans ses frontières */
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* ANIMATIONS */
+
+/* ============= ANIMATIONS ============== */
+
 .frame {
   display: inline-block;
   position: absolute;
@@ -270,4 +281,19 @@ article:hover:before {
   right: 21px;
   bottom: 21px;
   left: 21px;
+}
+
+/* =========== Media queries ============= */
+
+@media screen and (max-width: 850px) {
+  body {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
